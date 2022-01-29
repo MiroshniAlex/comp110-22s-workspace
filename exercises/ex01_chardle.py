@@ -18,12 +18,14 @@ print("Searching for " + user_letter + " in " + user_word)
 
 occurances: int = 0
 
-for n in range(0, 4):
+for n in range(0, 5):
     if user_letter == user_word[n]:
         print(user_letter + " found at index " + str(n))
         occurances = occurances + 1
 
-if occurances > 0:
+if occurances > 1:
     print(str(occurances) + " instances of " + user_letter + " found in " + user_word)
+if occurances == 1:
+    print(str(occurances) + " instance of " + user_letter + " found in " + user_word)
 else:
     print("No instances of " + user_letter + " found in " + user_word)
