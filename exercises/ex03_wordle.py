@@ -18,9 +18,6 @@ def contains_char(string: str, char: str) -> bool:
 
 def emojified(guess: str, secret: str) -> str:
     """Returns emoji string of guess."""
-    WHITE_BOX: str = "\U00002B1C"
-    GREEN_BOX: str = "\U0001F7E9"
-    YELLOW_BOX: str = "\U0001F7E8"
     assert len(guess) == len(secret)
     emoji: str = ""
     index: int = 0
@@ -45,7 +42,7 @@ def input_guess(length: int) -> str:
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
-    secret: str = "codes"
+    secret: str = "syntax"
     turn: int = 1
     while turn <= 6:
         print(f"=== Turn {turn}/6 ===")
