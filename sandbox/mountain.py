@@ -1,7 +1,8 @@
 """Copying Andrew's Mountain Rng."""
 
-from turtle import Turtle, done, colormode, tracer, update
-from random import randint
+from turtle import Turtle, done, colormode, tracer, update, TurtleScreen, Screen
+from random import randint, random
+import numpy as np
 
 
 def main():
@@ -9,6 +10,8 @@ def main():
     tracer(0, 0)
     colormode(255)
     screen_color(boris)
+    screen: TurtleScreen = Screen()
+    star(boris, 500)
     mountain(boris, -200, -150, 15)
     mountain(boris, 0, -150, 15)
     mountain(boris, -300, -150, 15)
@@ -64,9 +67,9 @@ def up_slope(turtle, min_length, max_length, num_ridges):
     for i in range(0, num_ridges):
         # multiplier: float = 1 / randint(1, 10)
         current_length: int = randint(min_length, max_length)
-        turtle.setheading(randint(-10, 30 + i * 5))
+        turtle.setheading(randint(-10, 80)) # 30 + i * 5))
         turtle.fd(current_length)
-        turtle.setheading(randint(-70, -30))
+        # turtle.setheading(randint(-70, -30))
         # turtle.fd(current_length * multiplier)
 
 
@@ -76,8 +79,35 @@ def down_slope(turtle, min_length, max_length, y):
         current_length: int = randint(min_length, max_length)
         turtle.setheading(randint(-80, 10))
         turtle.fd(current_length)
-        turtle.setheading(randint(30, 70))
+        # turtle.setheading(randint(30, 70))
         # turtle.fd(current_length * multiplier)
+
+
+def star(turtle, amount):
+    turtle.color("white")
+    for i in range(0, amount):
+        turtle.color(randint(200, 255), randint(200, 255), randint(160, 255))
+        x = randint(-360, 360)
+        y = (((2 * random()) ** 2) * randint(-75, 50)) + 150
+        move(turtle, x, y)
+        turtle.dot(randint(1, 4))
+
+
+def tree(turtle, x, y):
+    move(turtle, x, y)
+
+    # Draws trunk
+
+    turtle.begin_fill()
+    for i in range(0, 2):
+        turtle.fd(8)
+        turtle.left(90)
+        turtle.fd(50)
+        turtle.left(90)
+    turtle.end_fill()
+
+    # Draws leaves
+    
 
 
 if __name__ == "__main__":
