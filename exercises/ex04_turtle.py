@@ -14,7 +14,7 @@ def main() -> None:
     screen: TurtleScreen = Screen()
     screen.screensize(500, 500, "cyan")
     colormode(255)
-    tracer(0, 0)
+    # tracer(0, 0)
     # builds objects
     floor(timmy)
     table(timmy, -300, -250)

@@ -67,7 +67,7 @@ def up_slope(turtle, min_length, max_length, num_ridges):
     for i in range(0, num_ridges):
         # multiplier: float = 1 / randint(1, 10)
         current_length: int = randint(min_length, max_length)
-        turtle.setheading(randint(-10, 80)) # 30 + i * 5))
+        turtle.setheading(randint(-10, 80))  # 30 + i * 5))
         turtle.fd(current_length)
         # turtle.setheading(randint(-70, -30))
         # turtle.fd(current_length * multiplier)
@@ -98,6 +98,7 @@ def tree(turtle, x, y):
 
     # Draws trunk
 
+    turtle.color("brown")
     turtle.begin_fill()
     for i in range(0, 2):
         turtle.fd(8)
@@ -107,8 +108,37 @@ def tree(turtle, x, y):
     turtle.end_fill()
 
     # Draws leaves
-    
 
+    move(turtle, x - 26, y + 51)
+    turtle.color("green")
+    turtle.begin_fill()
+    turtle.fd(60)
+    turtle.left(90)
+    turtle.fd(10)
+    turtle.right(10)
+    turtle.fd(10)
+    turtle.left(90)
+    turtle.fd(10)
+    turtle.left(90)
+    turtle.fd(5)
+    turtle.right(90)
+    turtle.fd(10)
+    turtle.left(90)
+    turtle.fd(15)
+    turtle.right(90)
+    turtle.fd(10)
+    turtle.left(90)
+    turtle.fd(20)
+    turtle.left(90)
+    turtle.fd(5)
+    turtle.right(90)
+    turtle.fd(15)
+    turtle.left(90)
+    turtle.fd(5)
+    turtle.right(90)
+    turtle.fd(10)
+
+    
 
 if __name__ == "__main__":
     main()
